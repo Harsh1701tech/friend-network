@@ -1,4 +1,4 @@
-class T:
+class Task:
     def __init__(self, n, d, deps=None):
         self.n = n
         self.d = d
@@ -41,12 +41,12 @@ def print_times(earliest, latest):
     print(f"Latest completion: {latest}")
 
 def main():
-    taskA = T('A', 2)
-    taskB = T('B', 1, [taskA])
-    taskC = T('C', 3, [taskA])
-    taskD = T('D', 1, [taskB])
-    taskE = T('E', 2, [taskD])
-    taskF = T('F', 1, [taskC, taskE])
+    taskA = Task('A', 2)
+    taskB = Task('B', 1, [taskA])
+    taskC = Task('C', 3, [taskA])
+    taskD = Task('D', 1, [taskB])
+    taskE = Task('E', 2, [taskD])
+    taskF = Task('F', 1, [taskC, taskE])
 
     tasks = [taskA, taskB, taskC, taskD, taskE, taskF]
     deadline = 10
